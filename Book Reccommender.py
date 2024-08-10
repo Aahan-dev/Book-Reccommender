@@ -52,4 +52,41 @@ class BookRecommendationSystem:
             print("3. Exit")
 
 
-            
+            choice = input("Enter your choice (1-3): ")
+
+
+
+
+            if choice == "1":
+                genre = input("Enter the genre (e.g., Fiction, Dystopian): ")
+                recommendations = self.recommend_by_genre(genre)
+            elif choice == "2":
+                author = input("Enter the author's name: ")
+                recommendations = self.recommend_by_author(author)
+            elif choice == "3":
+                print("Exiting the book recommendation system. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Please select a valid option.")
+                continue
+
+
+
+
+            if recommendations:
+                print("Recommended Books:")
+                for title in recommendations:
+                    print(f"- {title}")
+            else:
+                print("No recommendations found.")
+
+
+
+
+if __name__ == "__main__":
+    # Create an instance of BookRecommendationSystem and run it
+    book_recommender = BookRecommendationSystem()
+    book_recommender.run()
+
+
+
