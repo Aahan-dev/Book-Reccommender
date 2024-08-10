@@ -25,4 +25,31 @@ class BookRecommendationSystem:
         recommended = [book['title'] for book in self.books if book['genre'].lower() == genre.lower()]
         return recommended
 
-    
+    def recommend_by_author(self, author):
+        """
+        Recommend books by a specific author.
+
+
+        Args:
+            author (str): The author's name to filter books by.
+
+
+        Returns:
+            list: A list of recommended book titles.
+        """
+        recommended = [book['title'] for book in self.books if book['author'].lower() == author.lower()]
+        return recommended
+
+
+    def run(self):
+        """Run the book recommendation system."""
+        print("Welcome to the Book Recommendation System!")
+       
+        while True:
+            print("\nChoose a recommendation method:")
+            print("1. By Genre")
+            print("2. By Author")
+            print("3. Exit")
+
+
+            
